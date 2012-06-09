@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = %q{refinerycms-swfjs}
-  s.version           = %q{0.5.5}
+  s.version           = %q{0.0.1}
   s.summary           = %q{Swfs extension for Refinery CMS}
   s.description       = %q{Manage swfs in RefineryCMS.}
   s.email             = %q{esosoundz@gmail.com}
