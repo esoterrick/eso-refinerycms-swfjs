@@ -1,0 +1,23 @@
+<li style="min-height: 35px" class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(video) -%>">
+  <span class='title'>
+    <%= swf.title %>
+    <span class='short_info'>(
+      <% swf.short_info.each do |info| %>
+       <%= "#{t(info[0])}: #{info[1]}" %>
+    <% end %>)</span>
+  </span>
+  <% unless action_name =~ /insert/   %>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag('eye.png'), refinery.swfs_admin_swf_path(swf, :dialog => true),
+                :title => t('.view_live_html'),
+                :target => "_blank" %>
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_swfs_admin_swf_path(swf),
+                :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.swfs_admin_swf_path(swf),
+                :class => "cancel confirm-delete",
+                :title => t('.delete'),
+                :confirm => t('message', :scope => 'refinery.admin.delete', :title => swf.title),
+                :method => :delete %>
+  </span>
+  <% end %>
+</li>

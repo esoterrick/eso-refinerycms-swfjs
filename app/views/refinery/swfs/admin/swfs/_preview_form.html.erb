@@ -1,0 +1,16 @@
+<%=  render "swfjs_dependencies" unless @embedded%>
+<%= form_for @swf, url: refinery.swfs_admin_swf_append_to_wym_path(@swf.id), :remote => true, :method => :post do |f| %>
+    <div class='dimensions'>
+    <div class='field'>
+      <%= f.label t('.width') %>
+      <%= f.text_field :width %>
+    </div>
+    <div class='field'>
+      <%= f.label t('.height') %>
+      <%= f.text_field :height %>
+    </div>
+    </div>
+    <div class="options">
+    <%= render('form_option_fields', :f => f) unless @embedded %>
+    </div>
+<% end %>

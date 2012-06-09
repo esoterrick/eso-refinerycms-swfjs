@@ -1,0 +1,23 @@
+<ul>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.swfs_admin_swfs_path %>
+    </li>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_swfs_admin_swf_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Swfs::Admin::SwfsController.sortable? && ::Refinery::Swfs::Swf.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Swfs"),
+                 refinery.swfs_admin_swfs_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Swfs"),
+                 refinery.swfs_admin_swfs_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

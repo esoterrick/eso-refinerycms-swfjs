@@ -1,0 +1,3 @@
+<%= link_to t('.use_files'), refinery.new_swfs_admin_swf_path, :class => 'select_swf_type' << (@embedded ? '' : ' selected') %>
+<%= link_to t('.use_embedded_swf'), refinery.new_swfs_admin_swf_path(:embedded => true), :class => 'select_swf_type' << (@embedded ? ' selected' : '') %>
+<%= render 'form' %>
